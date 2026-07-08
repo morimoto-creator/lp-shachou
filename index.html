@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>若手の離職を防ぐ新時代の体験型ゲーム研修 | 株式会社NSKKホールディングス</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --navy: #2c3e50;
+            --health-pink: #AD1457;
+            --health-pink-hover: #8e1046;
+            --point-yellow: #FFF9C4;
+            --sky-blue: #a3c9e2;
+            --text-main: #333333;
+            --soft-bg: #fdfafb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-main);
+            background-color: #ffffff;
+            letter-spacing: 0.04em;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ヘッダー */
+        header {
+            background-color: var(--navy);
+            padding: 15px 0;
+            border-bottom: 3px solid var(--health-pink);
+            text-align: center;
+        }
+        .header-title {
+            color: #ffffff;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        /* ヒーローセクション */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            background-color: var(--soft-bg);
+        }
+        .hero-tag {
+            color: var(--health-pink);
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            border: 2px solid var(--health-pink);
+            padding: 5px 20px;
+            border-radius: 20px;
+        }
+        .hero-title {
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 25px;
+            line-height: 1.4;
+            font-weight: 800;
+        }
+        .hero-title span {
+            background: linear-gradient(transparent 60%, var(--point-yellow) 60%);
+            padding: 0 4px;
+        }
+        .hero-title .highlight {
+            color: var(--health-pink);
+        }
+        .hero-desc {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-weight: 500;
+        }
+
+        /* CTA ボタン */
+        .cta-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: var(--health-pink);
+            color: #fff;
+            padding: 20px 50px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            box-shadow: 0 6px 0 var(--health-pink-hover);
+            transition: all 0.2s;
+        }
+        .cta-btn:hover {
+            transform: translateY(3px);
+            box-shadow: 0 3px 0 var(--health-pink-hover);
+        }
+        .cta-sub {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* お悩みセクション */
+        .problem-section {
+            padding: 60px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title h2 {
+            font-size: 1.8rem;
+            color: var(--navy);
+            font-weight: 800;
+        }
+        .problem-box {
+            background-color: #fff;
+            border: 2px dashed #ccc;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .problem-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .problem-item:last-child {
+            margin-bottom: 0;
+        }
+        .problem-item i {
+            color: var(--health-pink);
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        /* 解決策セクション */
+        .solution-section {
+            padding: 60px 0;
+            background-color: var(--point-yellow);
+        }
+        .solution-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .solution-card {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 15px;
+            flex: 1;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .solution-card i {
+            font-size: 2.5rem;
+            color: var(--health-pink);
+            margin-bottom: 15px;
+        }
+        .solution-card h3 {
+            font-size: 1.2rem;
+            color: var(--navy);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .solution-card p {
+            font-size: 0.95rem;
+            text-align: left;
+        }
+
+        /* 対比セクション */
+        .vs-section {
+            padding: 60px 0;
+        }
+        .vs-table {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .vs-table th, .vs-table td {
+            padding: 20px;
+            text-align: center;
+        }
+        .vs-table th {
+            background-color: var(--navy);
+            color: #fff;
+            font-weight: bold;
+        }
+        .vs-table td {
+            border-bottom: 1px solid #eee;
+        }
+        .vs-table tr:last-child td {
+            border-bottom: none;
+        }
+        .vs-highlight {
+            background-color: var(--soft-bg);
+            font-weight: bold;
+            color: var(--health-pink);
+        }
+
+        /* 実利（健康経営）セクション */
+        .benefit-section {
+            padding: 60px 0;
+            background-color: var(--navy);
+            color: #fff;
+            text-align: center;
+        }
+        .benefit-section h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .benefit-text {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        /* フッター */
+        footer {
+            background: #1a252f;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 1.6rem;
+            }
+            .solution-cards {
+                flex-direction: column;
+            }
+            .vs-table th, .vs-table td {
+                padding: 12px 8px;
+                font-size: 0.9rem;
+            }
+            .cta-btn {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header-title">健康経営セミナー | 株式会社NSKKホールディングス</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <span class="hero-tag">「若手がすぐ辞める…」と悩む社長・人事担当者様へ</span>
+            <h1 class="hero-title">
+                <span>「飲み会」では若手の本音は引き出せない。</span><br>
+                離職率を劇的に下げる、新時代の<span class="highlight">『体験型ゲーム研修』</span>
+            </h1>
+            <p class="hero-desc">
+                業務外の強制的な飲み会や、眠くなる座学はもう不要。自然と会話が生まれ、世代の壁を越えてチームがひとつになる「特別な2時間」を提供します。
+            </p>
+            <div class="cta-container">
+                <a href="#contact" class="cta-btn">まずは無料のオンライン体験会へ <i class="fas fa-chevron-right"></i></a>
+                <p class="cta-sub">※デモ体験・資料請求もこちらから承ります</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>こんな「ぶっちゃけの悩み」ありませんか？</h2>
+            </div>
+            <div class="problem-box">
+                <div class="problem-item">
+                    <i class="fas fa-times-circle"></i>
+                    <span>せっかく採用した若手が、3年以内にすぐ辞めてしまう</span>
+                </div>
+                <div class="problem-item">
+                    <i class="fas fa-times-circle"></i>
+                    <span>社内の空気がなんとなく重く、ギスギスしている</span>
+                </div>
+                <div class="problem-item">
+                    <i class="fas fa-times-circle"></i>
+                    <span>「今の若手が何を考えているか分からない」が管理職の口癖になっている</span>
+                </div>
+                <div class="problem-item">
+                    <i class="fas fa-times-circle"></i>
+                    <span>社内イベントや飲み会を企画しても、若手が参加してくれない</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="solution-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>なぜ「ゲーム型研修」で離職が止まるのか？</h2>
+            </div>
+            <div class="solution-cards">
+                <div class="solution-card">
+                    <i class="fas fa-comments"></i>
+                    <h3>自然と会話が生まれる</h3>
+                    <p>ゲームのルールに沿って進めるため、「何を話せばいいかわからない」という気まずさが一切ありません。内向的な社員も自然と主役になれます。</p>
+                </div>
+                <div class="solution-card">
+                    <i class="fas fa-users-cog"></i>
+                    <h3>役職を越えたフラットな関係</h3>
+                    <p>ゲームの中では社長も新入社員も対等です。上司の「普段は見られないチャーミングな一面」が見えることで、心理的安全性がいっきに高まります。</p>
+                </div>
+                <div class="solution-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>仕事への主体性が育つ</h3>
+                    <p>「どうすればゲームに勝てるか」をチームで必死に考える体験が、そのまま普段の業務における「指示待ちからの脱却」に繋がります。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="vs-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>従来の「社内交流」との違い</h2>
+            </div>
+            <table class="vs-table">
+                <thead>
+                    <tr>
+                        <th>特徴</th>
+                        <th>従来の飲み会・懇親会</th>
+                        <th class="vs-highlight">本ゲーム研修</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>若手の心理的負担</strong></td>
+                        <td>高い（気を遣う、残業と感じる）</td>
+                        <td class="vs-highlight">低い（純粋に楽しい）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>会話の深さ</strong></td>
+                        <td>いつものメンバー、愚痴になりがち</td>
+                        <td class="vs-highlight">全員とフラットに本音で話せる</td>
+                    </tr>
+                    <tr>
+                        <td><strong>業務への効果</strong></td>
+                        <td>その場限りになりやすい</td>
+                        <td class="vs-highlight">チームワーク・生産性が向上する</td>
+                    </tr>
+                    <tr>
+                        <td><strong>会社の経費扱い</strong></td>
+                        <td>福利厚生（基準が曖昧）</td>
+                        <td class="vs-highlight">公式な「社内研修費」として堂々計上</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="benefit-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>【社長へのメッセージ】<br>ただのエンタメで終わらせない「実利」があります</h2>
+            </div>
+            <p class="benefit-text">
+                このゲーム研修は、単に「楽しかった」で終わるイベントではありません。<br>
+                実は、国が推進する<strong>「健康経営優良法人」の認定を取得するための「具体的な取り組み実績」としてそのままカウント</strong>することができます。<br><br>
+                社内の雰囲気をガラリと良くして離職を防ぎながら、社外（求職者や取引先）には「うちはホワイト企業です」とアピールできる看板が手に入る。まさに一石二鳥の投資です。
+            </p>
+        </div>
+    </section>
+
+    <section id="contact" style="padding: 60px 0; text-align: center;">
+        <div class="container">
+            <div class="section-title">
+                <h2>まずは20分の無料相談・デモ体験から</h2>
+                <p style="margin-top: 15px;">御社の組織の課題に合わせて、最適なゲームプランをご提案します。</p>
+            </div>
+            <div class="cta-container">
+                <a href="https://kenko.nskk.jp/index.html" class="cta-btn" style="background-color: var(--navy); box-shadow: 0 6px 0 #1a252f;">公式サイトに戻る</a>
+                <a href="#" class="cta-btn" style="margin-left: 10px;">無料相談・体験を申し込む <i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 株式会社NSKKホールディングス All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
